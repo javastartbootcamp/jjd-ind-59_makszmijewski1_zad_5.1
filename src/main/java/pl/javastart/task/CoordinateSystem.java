@@ -6,27 +6,34 @@ public class CoordinateSystem {
 
     void run(Scanner scanner) {
         System.out.println("Podaj X");
-        int X = scanner.nextInt();
+        int coordinateX = scanner.nextInt();
         System.out.println("Podaj Y");
-        int Y = scanner.nextInt();
-        System.out.println("Punkt (" + X + ", " + Y + ") "
-                + whichQuarter(X, Y));
+        int coordinateY = scanner.nextInt();
+        System.out.println("Punkt (" + coordinateX + ", " + coordinateY + ") "
+                + whichQuarter(coordinateX, coordinateY));
     }
 
-    public String whichQuarter(int X, int Y) {
-        if (X == 0 && Y == 0)
+    public String whichQuarter(int coordinateX, int coordinateY) {
+        if (coordinateX == 0 && coordinateY == 0) {
             return "leży na środku układu współrzędnych";
-        else if (Y == 0)
+        }
+        else if (coordinateY == 0) {
             return "leży na osi X";
-        else if (X == 0)
+        }
+        else if (coordinateX == 0) {
             return "leży na osi Y";
-        else if (X > 0 && Y > 0)
+        }
+        else if (coordinateX > 0 && coordinateY > 0) {
             return "leży w I ćwiartce układu współrzędnych";
-        else if (X < 0 && Y > 0)
+        }
+        else if (coordinateX < 0 && coordinateY > 0) {
             return "leży w II ćwiartce układu współrzędnych";
-        else if (X < 0 && Y < 0)
+        }
+        else if (coordinateX < 0 && coordinateY < 0) {
             return "leży w III ćwiartce układu współrzędnych";
-        else
+        }
+        else {
             return "leży w IV ćwiartce układu współrzędnych";
+        }
     }
 }
